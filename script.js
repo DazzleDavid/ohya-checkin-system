@@ -1,15 +1,17 @@
 let excelData = [];
 
 const excelFile = document.getElementById("excelFile");
+const fileName = document.getElementById("fileName");
 const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const resultDiv = document.getElementById("result");
 
-// 上傳 Excel
 excelFile.addEventListener("change", (e) => {
     const file = e.target.files[0];
 
     if (!file) return;
+
+    fileName.textContent = `已選擇：${file.name}`;
 
     const reader = new FileReader();
 
@@ -21,10 +23,14 @@ excelFile.addEventListener("change", (e) => {
         });
 
         const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-
         excelData = XLSX.utils.sheet_to_json(firstSheet);
 
-        alert(`成功載入 ${excelData.length} 筆資料`);
+        resultDiv.innerHTML = `
+            <div class="success">
+                <h2>✅ Excel 載入成功</h2>
+                <p>共載入 ${excelData.length} 筆報名資料。</p>
+            </div>
+        `;
 
         console.log(excelData);
     };
@@ -32,17 +38,26 @@ excelFile.addEventListener("change", (e) => {
     reader.readAsArrayBuffer(file);
 });
 
-// 查詢功能
 searchBtn.addEventListener("click", () => {
     const keyword = searchInput.value.trim();
 
     if (!keyword) {
-        alert("請輸入查詢內容");
+        resultDiv.innerHTML = `
+            <div class="warning">
+                <h2>⚠️ 請輸入查詢內容</h2>
+                <p>可以輸入姓名、職別碼、Email 或電話。</p>
+            </div>
+        `;
         return;
     }
 
     if (excelData.length === 0) {
-        alert("請先上傳 Excel 檔案");
+        resultDiv.innerHTML = `
+            <div class="warning">
+                <h2>⚠️ 尚未上傳 Excel</h2>
+                <p>請先上傳活動報名名單。</p>
+            </div>
+        `;
         return;
     }
 
@@ -95,13 +110,12 @@ searchBtn.addEventListener("click", () => {
         resultDiv.innerHTML = `
             <div class="error">
                 <h2>❌ 查無資料</h2>
-                <p>此使用者不在報名名單內</p>
+                <p>此使用者不在報名名單內。</p>
             </div>
         `;
     }
 });
 
-// Enter 查詢
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         searchBtn.click();

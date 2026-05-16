@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>歐耶~不能舒在壓力上｜報名驗證系統</title>
+    <title>歐耶~不能舒在壓力上｜活動簽到系統</title>
 
     <link rel="stylesheet" href="style.css" />
 
-    <!-- SheetJS -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <header class="hero">
+        <div class="overlay"></div>
 
-        <div class="card">
+        <div class="hero-content">
             <h1>歐耶~不能舒在壓力上</h1>
-            <p class="subtitle">活動報名驗證系統</p>
+            <p>活動報名驗證系統</p>
+        </div>
+    </header>
 
-            <div class="upload-section">
-                <label class="upload-label">
-                    上傳 Excel 名單
-                    <input type="file" id="excelFile" accept=".xlsx,.xls" />
-                </label>
+    <main class="main-container">
+        <div class="card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-user-check"></i>
+                <span>報名驗證</span>
             </div>
+
+            <label class="upload-box">
+                <input type="file" id="excelFile" accept=".xlsx,.xls" />
+
+                <div class="upload-content">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    <h3>上傳 Excel 名單</h3>
+                    <p id="fileName">點擊選擇 Excel 檔案</p>
+                </div>
+            </label>
 
             <div class="search-section">
                 <input
@@ -32,13 +50,20 @@
                     placeholder="請輸入姓名 / 職別碼 / Email / 電話"
                 />
 
-                <button id="searchBtn">驗證報名</button>
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    驗證報名
+                </button>
             </div>
 
             <div id="result" class="result"></div>
-        </div>
 
-    </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 歐耶~不能舒在壓力上 活動簽到系統</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
