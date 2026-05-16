@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>歐耶~不能舒在壓力上｜報名驗證系統</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <h1>歐耶~不能舒在壓力上</h1>
+            <p class="subtitle">活動報名驗證系統</p>
+
+            <div class="upload-section">
+                <label class="upload-label">
+                    上傳 Excel 名單
+                    <input type="file" id="excelFile" accept=".xlsx,.xls" />
+                </label>
+            </div>
+
+            <div class="search-section">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="請輸入姓名 / 職別碼 / Email / 電話"
+                />
+
+                <button id="searchBtn">驗證報名</button>
+            </div>
+
+            <div id="result" class="result"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
