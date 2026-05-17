@@ -6,29 +6,27 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
+    background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
 }
 
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     color: white;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    background:
-        linear-gradient(
-            135deg,
-            #312e81 0%,
-            #4f46e5 45%,
-            #7c3aed 100%
-        );
+    background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
 }
 
-/* HERO */
+/* =========================
+   Header
+========================= */
 
 .hero {
     position: relative;
-    height: 300px;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,11 +36,10 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.2),
-            rgba(0,0,0,0.45)
-        );
+    background: linear-gradient(
+        rgba(0,0,0,0.22),
+        rgba(0,0,0,0.45)
+    );
 }
 
 .hero-content {
@@ -54,9 +51,9 @@ body {
 
 .hero h1 {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 800;
     margin-bottom: 16px;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .hero p {
@@ -64,59 +61,89 @@ body {
     opacity: 0.92;
 }
 
-/* MAIN */
+/* =========================
+   Main Container
+========================= */
 
 .main-container {
     width: 100%;
     max-width: 960px;
-    margin: -70px auto 40px auto;
+    margin: -60px auto 40px auto;
     padding: 20px;
 }
 
 .card {
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+    width: 100%;
+    color: white;
 
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.14);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
 }
 
-/* TITLE */
+/* =========================
+   Titles
+========================= */
 
 .card-title,
 .section-title {
     display: flex;
     align-items: center;
     gap: 12px;
+
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 800;
+
     margin-bottom: 26px;
+
+    color: white;
 }
 
-/* UPLOAD */
+.card-title i,
+.section-title i {
+    color: white;
+}
+
+/* =========================
+   Upload Box
+========================= */
 
 .upload-box {
     display: block;
-    border: 2px dashed rgba(255,255,255,0.5);
+
+    border: 2px dashed rgba(255,255,255,0.55);
+
     border-radius: 26px;
-    padding: 52px 24px;
+
+    padding: 50px 24px;
+
     text-align: center;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: 0.25s;
+
     margin-bottom: 28px;
 
     background: rgba(255,255,255,0.08);
 
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    color: white;
 }
 
 .upload-box:hover {
     transform: translateY(-3px);
+
     border-color: white;
+
     background: rgba(255,255,255,0.14);
 }
 
@@ -125,22 +152,30 @@ body {
     display: none;
 }
 
+.upload-content {
+    color: white;
+}
+
 .upload-content i {
     font-size: 3rem;
     margin-bottom: 18px;
+    color: white;
 }
 
 .upload-content h3 {
+    font-size: 1.45rem;
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    color: white;
 }
 
 .upload-content p {
-    opacity: 0.88;
-    word-break: break-all;
+    color: rgba(255,255,255,0.9);
+    word-break: break-word;
 }
 
-/* SEARCH */
+/* =========================
+   Search
+========================= */
 
 .search-section {
     display: flex;
@@ -151,15 +186,28 @@ body {
 .search-section input,
 .draw-box input {
     flex: 1;
+
+    width: 100%;
+
     padding: 16px 18px;
+
     border-radius: 16px;
+
     border: none;
+
     font-size: 16px;
-    background: rgba(255,255,255,0.94);
+
+    background: #ffffff;
+
     color: #111827;
 
     -webkit-appearance: none;
     appearance: none;
+}
+
+.search-section input::placeholder,
+.draw-box input::placeholder {
+    color: #9ca3af;
 }
 
 .search-section input:focus,
@@ -167,13 +215,18 @@ body {
     outline: 3px solid rgba(255,255,255,0.4);
 }
 
-/* BUTTON */
+/* =========================
+   Buttons
+========================= */
 
 button {
     border: none;
+
     cursor: pointer;
+
     transition: 0.25s;
-    font-weight: bold;
+
+    font-weight: 800;
 
     -webkit-appearance: none;
     appearance: none;
@@ -182,27 +235,44 @@ button {
 .search-section button,
 .draw-box button,
 #exportBtn {
-    background: white;
+    background: #ffffff;
+
     color: #4f46e5;
+
     padding: 16px 24px;
+
     border-radius: 16px;
+
     font-size: 15px;
+
     white-space: nowrap;
+}
+
+.search-section button i,
+.draw-box button i,
+#exportBtn i {
+    color: #4f46e5;
 }
 
 .search-section button:hover,
 .draw-box button:hover,
 #exportBtn:hover {
     transform: translateY(-2px);
+
     background: #e0e7ff;
 }
 
-/* VERIFY TOOL */
+/* =========================
+   Verify Tools
+========================= */
 
 .verify-tools {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 18px;
 
     margin: 18px 0 30px 0;
@@ -211,11 +281,9 @@ button {
 
     border-radius: 22px;
 
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.10);
 
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.22);
 }
 
 .verify-info {
@@ -238,17 +306,19 @@ button {
 
     font-size: 1.3rem;
 
+    color: white;
+
     flex-shrink: 0;
 }
 
 .verify-info-text strong {
     display: block;
     margin-bottom: 4px;
+    color: white;
 }
 
 .verify-info-text p {
-    opacity: 0.9;
-    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
 }
 
 #recordCount {
@@ -256,7 +326,9 @@ button {
     font-weight: bold;
 }
 
-/* LOTTERY */
+/* =========================
+   Lottery
+========================= */
 
 .lottery-card {
     margin-top: 30px;
@@ -265,11 +337,9 @@ button {
 
     border-radius: 26px;
 
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.10);
 
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
 .lottery-grid {
@@ -281,43 +351,44 @@ button {
 
 .record-upload {
     display: flex;
+
     align-items: center;
+
     gap: 16px;
 
     padding: 20px;
 
     border-radius: 18px;
 
-    border: 1px dashed rgba(255,255,255,0.45);
+    border: 1px dashed rgba(255,255,255,0.5);
 
     background: rgba(255,255,255,0.08);
 
     cursor: pointer;
 
     transition: 0.25s;
-
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
 }
 
 .record-upload:hover {
     transform: translateY(-2px);
+
     background: rgba(255,255,255,0.16);
 }
 
 .record-upload i {
     font-size: 2rem;
+    color: white;
 }
 
 .record-upload strong {
-    font-size: 1rem;
+    color: white;
 }
 
 .record-upload p {
     margin-top: 6px;
+    color: rgba(255,255,255,0.85);
     font-size: 0.9rem;
-    opacity: 0.85;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .draw-box {
@@ -325,7 +396,9 @@ button {
     gap: 16px;
 }
 
-/* RESULT */
+/* =========================
+   Result
+========================= */
 
 .result {
     margin-top: 28px;
@@ -337,33 +410,41 @@ button {
 .draw-result {
     border-radius: 22px;
     padding: 24px;
+    color: white;
 }
 
 .success {
-    background: rgba(16,185,129,0.18);
-    border: 1px solid rgba(16,185,129,0.45);
+    background: rgba(16,185,129,0.22);
+    border: 1px solid rgba(16,185,129,0.55);
 }
 
 .error {
-    background: rgba(239,68,68,0.18);
-    border: 1px solid rgba(239,68,68,0.45);
+    background: rgba(239,68,68,0.22);
+    border: 1px solid rgba(239,68,68,0.55);
 }
 
 .warning {
-    background: rgba(245,158,11,0.18);
-    border: 1px solid rgba(245,158,11,0.45);
+    background: rgba(245,158,11,0.22);
+    border: 1px solid rgba(245,158,11,0.55);
 }
 
 .draw-result {
     background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.30);
+}
+
+.success h2,
+.error h2,
+.warning h2,
+.draw-result h2 {
+    margin-bottom: 10px;
 }
 
 .result-item,
 .winner-item {
     margin-top: 12px;
-    word-break: break-word;
     line-height: 1.6;
+    word-break: break-word;
 }
 
 .winner-item {
@@ -372,7 +453,9 @@ button {
     background: rgba(255,255,255,0.12);
 }
 
-/* FOOTER */
+/* =========================
+   Footer
+========================= */
 
 .footer {
     margin-top: auto;
@@ -381,13 +464,14 @@ button {
 
     padding: 22px;
 
-    background: rgba(0,0,0,0.18);
+    color: white;
 
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.18);
 }
 
-/* TABLET */
+/* =========================
+   Tablet
+========================= */
 
 @media (max-width: 768px) {
 
@@ -427,18 +511,17 @@ button {
     .verify-tools {
         flex-direction: column;
         align-items: stretch;
+        gap: 14px;
     }
 
-    .search-section input,
-    .draw-box input,
     .search-section button,
     .draw-box button,
     #exportBtn {
         width: 100%;
     }
 
-    .verify-tools {
-        padding: 18px;
+    .verify-info {
+        align-items: flex-start;
     }
 
     .lottery-card {
@@ -446,7 +529,9 @@ button {
     }
 }
 
-/* PHONE */
+/* =========================
+   Mobile
+========================= */
 
 @media (max-width: 430px) {
 
@@ -456,6 +541,7 @@ button {
 
     .hero h1 {
         font-size: 1.55rem;
+        line-height: 1.35;
     }
 
     .hero p {
@@ -463,54 +549,93 @@ button {
     }
 
     .main-container {
-        padding: 10px;
-        margin-top: -35px;
+        width: 100%;
+        padding: 12px;
+        margin-top: -32px;
     }
 
     .card {
+        width: 100%;
         padding: 18px;
         border-radius: 20px;
     }
 
     .card-title,
     .section-title {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 
+    /* 修正手機白塊 */
+
     .upload-box {
-        padding: 30px 14px;
+        min-height: 190px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 28px 14px;
+
         border-radius: 20px;
+
+        background: rgba(255,255,255,0.08) !important;
+    }
+
+    .upload-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        width: 100%;
     }
 
     .upload-content i {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
+        margin-bottom: 10px;
+        color: white !important;
     }
 
     .upload-content h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        color: white !important;
     }
 
-    .upload-content p,
-    .record-upload p,
-    .verify-info-text p {
+    .upload-content p {
         font-size: 0.85rem;
+        color: rgba(255,255,255,0.9) !important;
     }
 
     .search-section input,
     .draw-box input {
         font-size: 14px;
         padding: 14px;
+        border-radius: 14px;
     }
 
     .search-section button,
     .draw-box button,
     #exportBtn {
-        padding: 14px;
+        width: 100%;
         font-size: 14px;
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .verify-tools {
+        padding: 16px;
+        border-radius: 18px;
     }
 
     .verify-info {
-        align-items: flex-start;
+        gap: 12px;
     }
 
     .verify-info-icon {
@@ -520,17 +645,17 @@ button {
     }
 
     .lottery-card {
-        padding: 18px;
+        padding: 16px;
         border-radius: 20px;
     }
 
     .record-upload {
-        align-items: flex-start;
         padding: 16px;
+        align-items: flex-start;
     }
 
     .record-upload i {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin-top: 4px;
     }
 
@@ -542,17 +667,20 @@ button {
         border-radius: 18px;
     }
 
+    .result-item,
     .winner-item {
-        font-size: 0.92rem;
+        font-size: 0.9rem;
     }
 
     .footer {
-        padding: 18px;
         font-size: 0.85rem;
+        padding: 18px;
     }
 }
 
-/* SAFARI FIX */
+/* =========================
+   Safari Fix
+========================= */
 
 @supports (-webkit-touch-callout: none) {
 
@@ -560,18 +688,18 @@ button {
         min-height: -webkit-fill-available;
     }
 
-    .card,
-    .lottery-card,
-    .verify-tools,
-    .upload-box,
-    .record-upload,
-    .footer {
-        background: rgba(255,255,255,0.18);
-    }
-
     input,
     button {
         -webkit-appearance: none;
         appearance: none;
+    }
+
+    .card,
+    .lottery-card,
+    .verify-tools,
+    .upload-box,
+    .record-upload {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 }
