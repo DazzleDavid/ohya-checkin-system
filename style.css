@@ -7,10 +7,12 @@
 
 html {
     min-height: 100%;
+    background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
 }
 
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     color: white;
     display: flex;
     flex-direction: column;
@@ -18,7 +20,9 @@ body {
     background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 
 .hero {
     position: relative;
@@ -32,7 +36,10 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.45));
+    background: linear-gradient(
+        rgba(0,0,0,0.22),
+        rgba(0,0,0,0.45)
+    );
 }
 
 .hero-content {
@@ -45,16 +52,18 @@ body {
 .hero h1 {
     font-size: 3rem;
     font-weight: 800;
-    line-height: 1.25;
     margin-bottom: 16px;
+    line-height: 1.25;
 }
 
 .hero p {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
-/* Main */
+/* =========================
+   Main Container
+========================= */
 
 .main-container {
     width: 100%;
@@ -64,27 +73,39 @@ body {
 }
 
 .card {
+    width: 100%;
     color: white;
+
     background: rgba(255,255,255,0.14);
+
     border: 1px solid rgba(255,255,255,0.25);
+
     border-radius: 30px;
+
     padding: 40px;
+
     box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
 
-/* Titles */
+/* =========================
+   Titles
+========================= */
 
 .card-title,
 .section-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: white;
+
     font-size: 1.6rem;
     font-weight: 800;
+
     margin-bottom: 26px;
+
+    color: white;
 }
 
 .card-title i,
@@ -92,24 +113,37 @@ body {
     color: white;
 }
 
-/* Upload Excel */
+/* =========================
+   Upload Box
+========================= */
 
 .upload-box {
     display: block;
-    color: white;
+
     border: 2px dashed rgba(255,255,255,0.55);
+
     border-radius: 26px;
-    padding: 48px 22px;
+
+    padding: 50px 24px;
+
     text-align: center;
+
     cursor: pointer;
+
     transition: 0.25s;
+
     margin-bottom: 28px;
+
     background: rgba(255,255,255,0.08);
+
+    color: white;
 }
 
 .upload-box:hover {
     transform: translateY(-3px);
+
     border-color: white;
+
     background: rgba(255,255,255,0.14);
 }
 
@@ -123,23 +157,25 @@ body {
 }
 
 .upload-content i {
-    color: white;
     font-size: 3rem;
     margin-bottom: 18px;
+    color: white;
 }
 
 .upload-content h3 {
-    color: white;
     font-size: 1.45rem;
     margin-bottom: 10px;
+    color: white;
 }
 
 .upload-content p {
-    color: rgba(255,255,255,0.88);
-    word-break: break-all;
+    color: rgba(255,255,255,0.9);
+    word-break: break-word;
 }
 
-/* Search */
+/* =========================
+   Search
+========================= */
 
 .search-section {
     display: flex;
@@ -150,13 +186,21 @@ body {
 .search-section input,
 .draw-box input {
     flex: 1;
+
     width: 100%;
+
     padding: 16px 18px;
+
     border-radius: 16px;
+
     border: none;
+
     font-size: 16px;
+
     background: #ffffff;
+
     color: #111827;
+
     -webkit-appearance: none;
     appearance: none;
 }
@@ -168,16 +212,22 @@ body {
 
 .search-section input:focus,
 .draw-box input:focus {
-    outline: 3px solid rgba(255,255,255,0.42);
+    outline: 3px solid rgba(255,255,255,0.4);
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 
 button {
     border: none;
+
     cursor: pointer;
+
     transition: 0.25s;
+
     font-weight: 800;
+
     -webkit-appearance: none;
     appearance: none;
 }
@@ -186,10 +236,15 @@ button {
 .draw-box button,
 #exportBtn {
     background: #ffffff;
+
     color: #4f46e5;
+
     padding: 16px 24px;
+
     border-radius: 16px;
+
     font-size: 15px;
+
     white-space: nowrap;
 }
 
@@ -203,22 +258,32 @@ button {
 .draw-box button:hover,
 #exportBtn:hover {
     transform: translateY(-2px);
+
     background: #e0e7ff;
 }
 
-/* Verify Tools */
+/* =========================
+   Verify Tools
+========================= */
 
 .verify-tools {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 18px;
+
     margin: 18px 0 30px 0;
+
     padding: 18px 22px;
+
     border-radius: 22px;
+
     background: rgba(255,255,255,0.10);
+
     border: 1px solid rgba(255,255,255,0.22);
-    color: white;
 }
 
 .verify-info {
@@ -230,45 +295,51 @@ button {
 .verify-info-icon {
     width: 46px;
     height: 46px;
+
     border-radius: 14px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.16);
-    color: white;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
 
-.verify-info-icon i {
+    background: rgba(255,255,255,0.16);
+
+    font-size: 1.3rem;
+
     color: white;
+
+    flex-shrink: 0;
 }
 
 .verify-info-text strong {
     display: block;
-    color: white;
     margin-bottom: 4px;
+    color: white;
 }
 
 .verify-info-text p {
-    color: rgba(255,255,255,0.88);
-    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
 }
 
 #recordCount {
     color: #fde68a;
-    font-weight: 900;
+    font-weight: bold;
 }
 
-/* Lottery */
+/* =========================
+   Lottery
+========================= */
 
 .lottery-card {
     margin-top: 30px;
+
     padding: 30px;
+
     border-radius: 26px;
+
     background: rgba(255,255,255,0.10);
+
     border: 1px solid rgba(255,255,255,0.25);
-    color: white;
 }
 
 .lottery-grid {
@@ -280,37 +351,44 @@ button {
 
 .record-upload {
     display: flex;
+
     align-items: center;
+
     gap: 16px;
+
     padding: 20px;
+
     border-radius: 18px;
+
     border: 1px dashed rgba(255,255,255,0.5);
+
     background: rgba(255,255,255,0.08);
-    color: white;
+
     cursor: pointer;
+
     transition: 0.25s;
 }
 
 .record-upload:hover {
     transform: translateY(-2px);
+
     background: rgba(255,255,255,0.16);
 }
 
 .record-upload i {
-    color: white;
     font-size: 2rem;
+    color: white;
 }
 
 .record-upload strong {
     color: white;
-    font-size: 1rem;
 }
 
 .record-upload p {
     margin-top: 6px;
     color: rgba(255,255,255,0.85);
     font-size: 0.9rem;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .draw-box {
@@ -318,7 +396,9 @@ button {
     gap: 16px;
 }
 
-/* Results */
+/* =========================
+   Result
+========================= */
 
 .result {
     margin-top: 28px;
@@ -350,35 +430,21 @@ button {
 
 .draw-result {
     background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.30);
 }
 
 .success h2,
 .error h2,
 .warning h2,
 .draw-result h2 {
-    color: white;
-    margin-bottom: 8px;
-}
-
-.success p,
-.error p,
-.warning p,
-.draw-result p {
-    color: rgba(255,255,255,0.92);
+    margin-bottom: 10px;
 }
 
 .result-item,
 .winner-item {
     margin-top: 12px;
-    color: white;
-    word-break: break-word;
     line-height: 1.6;
-}
-
-.result-item strong,
-.winner-item strong {
-    color: white;
+    word-break: break-word;
 }
 
 .winner-item {
@@ -387,19 +453,28 @@ button {
     background: rgba(255,255,255,0.12);
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 
 .footer {
     margin-top: auto;
+
     text-align: center;
+
     padding: 22px;
+
     color: white;
+
     background: rgba(0,0,0,0.18);
 }
 
-/* Tablet */
+/* =========================
+   Tablet
+========================= */
 
 @media (max-width: 768px) {
+
     .hero {
         height: 220px;
     }
@@ -428,8 +503,7 @@ button {
     }
 
     .upload-box {
-        padding: 36px 18px;
-        border-radius: 22px;
+        padding: 38px 18px;
     }
 
     .search-section,
@@ -440,16 +514,10 @@ button {
         gap: 14px;
     }
 
-    .search-section input,
-    .draw-box input,
     .search-section button,
     .draw-box button,
     #exportBtn {
         width: 100%;
-    }
-
-    .verify-tools {
-        padding: 18px;
     }
 
     .verify-info {
@@ -458,68 +526,91 @@ button {
 
     .lottery-card {
         padding: 22px;
-        border-radius: 22px;
-    }
-
-    .record-upload {
-        align-items: flex-start;
     }
 }
 
-/* Phone */
+/* =========================
+   Mobile
+========================= */
 
 @media (max-width: 430px) {
+
     .hero {
-        height: 185px;
+        height: 190px;
     }
 
     .hero h1 {
-        font-size: 1.48rem;
+        font-size: 1.55rem;
         line-height: 1.35;
     }
 
     .hero p {
-        font-size: 0.92rem;
+        font-size: 0.95rem;
     }
 
     .main-container {
-        padding: 10px;
+        width: 100%;
+        padding: 12px;
         margin-top: -32px;
     }
 
     .card {
+        width: 100%;
         padding: 18px;
         border-radius: 20px;
     }
 
     .card-title,
     .section-title {
-        font-size: 1.18rem;
-        margin-bottom: 20px;
+        font-size: 1.2rem;
     }
 
+    /* 修正手機白塊 */
+
     .upload-box {
+        min-height: 190px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
         padding: 28px 14px;
+
         border-radius: 20px;
+
+        background: rgba(255,255,255,0.08) !important;
+    }
+
+    .upload-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        width: 100%;
     }
 
     .upload-content i {
-        font-size: 2.2rem;
-        margin-bottom: 12px;
+        font-size: 2.3rem;
+        margin-bottom: 10px;
+        color: white !important;
     }
 
     .upload-content h3 {
         font-size: 1rem;
+        color: white !important;
     }
 
-    .upload-content p,
-    .record-upload p,
-    .verify-info-text p {
+    .upload-content p {
         font-size: 0.85rem;
-    }
-
-    .search-section {
-        margin-bottom: 16px;
+        color: rgba(255,255,255,0.9) !important;
     }
 
     .search-section input,
@@ -532,13 +623,13 @@ button {
     .search-section button,
     .draw-box button,
     #exportBtn {
+        width: 100%;
         font-size: 14px;
         padding: 14px;
         border-radius: 14px;
     }
 
     .verify-tools {
-        margin: 14px 0 22px 0;
         padding: 16px;
         border-radius: 18px;
     }
@@ -560,12 +651,12 @@ button {
 
     .record-upload {
         padding: 16px;
-        border-radius: 16px;
+        align-items: flex-start;
     }
 
     .record-upload i {
         font-size: 1.5rem;
-        margin-top: 3px;
+        margin-top: 4px;
     }
 
     .success,
@@ -574,10 +665,6 @@ button {
     .draw-result {
         padding: 18px;
         border-radius: 18px;
-    }
-
-    .result {
-        margin-top: 22px;
     }
 
     .result-item,
@@ -591,9 +678,12 @@ button {
     }
 }
 
-/* Safari Fix */
+/* =========================
+   Safari Fix
+========================= */
 
 @supports (-webkit-touch-callout: none) {
+
     body {
         min-height: -webkit-fill-available;
     }
