@@ -20,9 +20,7 @@ body {
     background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
 }
 
-/* =========================
-   Header
-========================= */
+/* Header */
 
 .hero {
     position: relative;
@@ -36,10 +34,7 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.22),
-        rgba(0,0,0,0.45)
-    );
+    background: linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.45));
 }
 
 .hero-content {
@@ -61,50 +56,37 @@ body {
     opacity: 0.92;
 }
 
-/* =========================
-   Main Container
-========================= */
+/* Main */
 
 .main-container {
     width: 100%;
     max-width: 960px;
-    margin: -60px auto 40px auto;
+    margin: 32px auto 40px auto;
     padding: 20px;
 }
 
 .card {
     width: 100%;
     color: white;
-
     background: rgba(255,255,255,0.14);
-
     border: 1px solid rgba(255,255,255,0.25);
-
     border-radius: 30px;
-
     padding: 40px;
-
     box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
 
-/* =========================
-   Titles
-========================= */
+/* Titles */
 
 .card-title,
 .section-title {
     display: flex;
     align-items: center;
     gap: 12px;
-
     font-size: 1.6rem;
     font-weight: 800;
-
     margin-bottom: 26px;
-
     color: white;
 }
 
@@ -113,37 +95,24 @@ body {
     color: white;
 }
 
-/* =========================
-   Upload Box
-========================= */
+/* Upload */
 
 .upload-box {
     display: block;
-
     border: 2px dashed rgba(255,255,255,0.55);
-
     border-radius: 26px;
-
     padding: 50px 24px;
-
     text-align: center;
-
     cursor: pointer;
-
     transition: 0.25s;
-
     margin-bottom: 28px;
-
     background: rgba(255,255,255,0.08);
-
     color: white;
 }
 
 .upload-box:hover {
     transform: translateY(-3px);
-
     border-color: white;
-
     background: rgba(255,255,255,0.14);
 }
 
@@ -173,9 +142,7 @@ body {
     word-break: break-word;
 }
 
-/* =========================
-   Search
-========================= */
+/* Search */
 
 .search-section {
     display: flex;
@@ -186,21 +153,13 @@ body {
 .search-section input,
 .draw-box input {
     flex: 1;
-
     width: 100%;
-
     padding: 16px 18px;
-
     border-radius: 16px;
-
     border: none;
-
     font-size: 16px;
-
     background: #ffffff;
-
     color: #111827;
-
     -webkit-appearance: none;
     appearance: none;
 }
@@ -215,19 +174,13 @@ body {
     outline: 3px solid rgba(255,255,255,0.4);
 }
 
-/* =========================
-   Buttons
-========================= */
+/* Button */
 
 button {
     border: none;
-
     cursor: pointer;
-
     transition: 0.25s;
-
     font-weight: 800;
-
     -webkit-appearance: none;
     appearance: none;
 }
@@ -236,15 +189,10 @@ button {
 .draw-box button,
 #exportBtn {
     background: #ffffff;
-
     color: #4f46e5;
-
     padding: 16px 24px;
-
     border-radius: 16px;
-
     font-size: 15px;
-
     white-space: nowrap;
 }
 
@@ -258,31 +206,20 @@ button {
 .draw-box button:hover,
 #exportBtn:hover {
     transform: translateY(-2px);
-
     background: #e0e7ff;
 }
 
-/* =========================
-   Verify Tools
-========================= */
+/* Verify Tools */
 
 .verify-tools {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: 18px;
-
     margin: 18px 0 30px 0;
-
     padding: 18px 22px;
-
     border-radius: 22px;
-
     background: rgba(255,255,255,0.10);
-
     border: 1px solid rgba(255,255,255,0.22);
 }
 
@@ -295,19 +232,13 @@ button {
 .verify-info-icon {
     width: 46px;
     height: 46px;
-
     border-radius: 14px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: rgba(255,255,255,0.16);
-
     font-size: 1.3rem;
-
     color: white;
-
     flex-shrink: 0;
 }
 
@@ -326,19 +257,13 @@ button {
     font-weight: bold;
 }
 
-/* =========================
-   Lottery
-========================= */
+/* Lottery */
 
 .lottery-card {
     margin-top: 30px;
-
     padding: 30px;
-
     border-radius: 26px;
-
     background: rgba(255,255,255,0.10);
-
     border: 1px solid rgba(255,255,255,0.25);
 }
 
@@ -351,27 +276,18 @@ button {
 
 .record-upload {
     display: flex;
-
     align-items: center;
-
     gap: 16px;
-
     padding: 20px;
-
     border-radius: 18px;
-
     border: 1px dashed rgba(255,255,255,0.5);
-
     background: rgba(255,255,255,0.08);
-
     cursor: pointer;
-
     transition: 0.25s;
 }
 
 .record-upload:hover {
     transform: translateY(-2px);
-
     background: rgba(255,255,255,0.16);
 }
 
@@ -396,9 +312,7 @@ button {
     gap: 16px;
 }
 
-/* =========================
-   Result
-========================= */
+/* Result */
 
 .result {
     margin-top: 28px;
@@ -453,28 +367,19 @@ button {
     background: rgba(255,255,255,0.12);
 }
 
-/* =========================
-   Footer
-========================= */
+/* Footer */
 
 .footer {
     margin-top: auto;
-
     text-align: center;
-
     padding: 22px;
-
     color: white;
-
     background: rgba(0,0,0,0.18);
 }
 
-/* =========================
-   Tablet
-========================= */
+/* Tablet */
 
 @media (max-width: 768px) {
-
     .hero {
         height: 220px;
     }
@@ -489,7 +394,7 @@ button {
 
     .main-container {
         padding: 14px;
-        margin-top: -45px;
+        margin: 24px auto 36px auto;
     }
 
     .card {
@@ -529,14 +434,11 @@ button {
     }
 }
 
-/* =========================
-   Mobile
-========================= */
+/* Mobile */
 
 @media (max-width: 430px) {
-
     .hero {
-        height: 190px;
+        height: 185px;
     }
 
     .hero h1 {
@@ -551,7 +453,7 @@ button {
     .main-container {
         width: 100%;
         padding: 12px;
-        margin-top: -32px;
+        margin: 20px auto 32px auto;
     }
 
     .card {
@@ -565,35 +467,21 @@ button {
         font-size: 1.2rem;
     }
 
-    /* 修正手機白塊 */
-
     .upload-box {
         min-height: 190px;
-
         display: flex;
-
         align-items: center;
-
         justify-content: center;
-
         padding: 28px 14px;
-
         border-radius: 20px;
-
         background: rgba(255,255,255,0.08) !important;
     }
 
     .upload-content {
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
-
-        justify-content: center;
-
         gap: 8px;
-
         width: 100%;
     }
 
@@ -678,12 +566,9 @@ button {
     }
 }
 
-/* =========================
-   Safari Fix
-========================= */
+/* Safari Fix */
 
 @supports (-webkit-touch-callout: none) {
-
     body {
         min-height: -webkit-fill-available;
     }
