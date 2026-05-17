@@ -47,7 +47,7 @@ body {
 
 .main-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     margin: -60px auto 40px auto;
     padding: 20px;
 }
@@ -61,24 +61,25 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-.card-title {
+.card-title,
+.section-title {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .upload-box {
     display: block;
     border: 2px dashed rgba(255,255,255,0.55);
     border-radius: 24px;
-    padding: 50px 20px;
+    padding: 48px 20px;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     background: rgba(255,255,255,0.08);
 }
 
@@ -88,7 +89,8 @@ body {
     border-color: white;
 }
 
-.upload-box input {
+.upload-box input,
+.record-upload input {
     display: none;
 }
 
@@ -108,34 +110,154 @@ body {
 .search-section {
     display: flex;
     gap: 16px;
+    margin-bottom: 20px;
 }
 
-.search-section input {
+.search-section input,
+.draw-box input {
     flex: 1;
-    padding: 16px;
+    padding: 16px 18px;
     border-radius: 14px;
     border: none;
     font-size: 16px;
 }
 
-.search-section input:focus {
+.search-section input:focus,
+.draw-box input:focus {
     outline: 3px solid rgba(255,255,255,0.45);
 }
 
-.search-section button {
+button {
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.search-section button,
+.draw-box button {
     background: white;
     color: #4f46e5;
-    border: none;
     padding: 16px 24px;
     border-radius: 14px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.search-section button:hover,
+.draw-box button:hover {
+    transform: translateY(-2px);
+    background: #e0e7ff;
+}
+
+/* 查驗紀錄工具列 */
+
+.verify-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0 28px 0;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+}
+
+.verify-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.verify-info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.18);
+    font-size: 1.3rem;
+}
+
+.verify-info-text strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.verify-info-text p {
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+#recordCount {
+    color: #fef08a;
     font-weight: bold;
+}
+
+#exportBtn {
+    background: white;
+    color: #4f46e5;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+#exportBtn:hover {
+    transform: translateY(-2px);
+    background: #e0e7ff;
+}
+
+/* 抽籤區 */
+
+.lottery-card {
+    margin-top: 28px;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.lottery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.record-upload {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px dashed rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.08);
     cursor: pointer;
     transition: 0.3s;
 }
 
-.search-section button:hover {
+.record-upload:hover {
+    background: rgba(255,255,255,0.16);
     transform: translateY(-2px);
-    background: #e0e7ff;
+}
+
+.record-upload i {
+    font-size: 2rem;
+}
+
+.record-upload p {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.draw-box {
+    display: flex;
+    gap: 16px;
 }
 
 .result {
@@ -144,7 +266,8 @@ body {
 
 .success,
 .error,
-.warning {
+.warning,
+.draw-result {
     border-radius: 20px;
     padding: 24px;
 }
@@ -164,9 +287,21 @@ body {
     border: 1px solid rgba(245,158,11,0.5);
 }
 
-.result-item {
+.draw-result {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.result-item,
+.winner-item {
     margin-top: 12px;
     word-break: break-all;
+}
+
+.winner-item {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
 }
 
 .footer {
@@ -190,11 +325,20 @@ body {
         padding: 24px;
     }
 
-    .search-section {
+    .search-section,
+    .draw-box,
+    .verify-tools {
         flex-direction: column;
+        align-items: stretch;
     }
 
-    .search-section button {
+    .verify-info {
+        align-items: flex-start;
+    }
+
+    .search-section button,
+    .draw-box button,
+    #exportBtn {
         width: 100%;
     }
 }

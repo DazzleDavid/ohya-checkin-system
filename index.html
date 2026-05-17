@@ -16,55 +16,96 @@
 </head>
 <body>
 
-    <header class="hero">
-        <div class="overlay"></div>
+<header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>歐耶~不能舒在壓力上</h1>
+        <p>活動報名驗證系統</p>
+    </div>
+</header>
 
-        <div class="hero-content">
-            <h1>歐耶~不能舒在壓力上</h1>
-            <p>活動報名驗證系統</p>
+<main class="main-container">
+    <div class="card">
+
+        <div class="card-title">
+            <i class="fa-solid fa-user-check"></i>
+            <span>報名驗證</span>
         </div>
-    </header>
 
-    <main class="main-container">
-        <div class="card">
+        <label class="upload-box">
+            <input type="file" id="excelFile" accept=".xlsx,.xls" />
+            <div class="upload-content">
+                <i class="fa-solid fa-file-arrow-up"></i>
+                <h3>上傳 Excel 報名名單</h3>
+                <p id="fileName">點擊選擇 Excel 檔案</p>
+            </div>
+        </label>
 
-            <div class="card-title">
-                <i class="fa-solid fa-user-check"></i>
-                <span>報名驗證</span>
+        <div class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="請輸入姓名 / 職別碼 / Email / 電話"
+            />
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                查驗報名
+            </button>
+        </div>
+
+        <div class="verify-tools">
+            <button id="exportBtn" type="button">
+                <i class="fa-solid fa-file-export"></i>
+                匯出查驗紀錄
+            </button>
+
+            <p>目前已記錄 <span id="recordCount">0</span> 位驗證成功名單</p>
+        </div>
+
+        <div id="verifyResult" class="result"></div>
+
+        <section class="lottery-card">
+            <div class="section-title">
+                <i class="fa-solid fa-gift"></i>
+                <span>抽籤與紀錄管理</span>
             </div>
 
-            <label class="upload-box">
-                <input type="file" id="excelFile" accept=".xlsx,.xls" />
+            <div class="lottery-grid">
+                <label class="record-upload">
+                    <input type="file" id="recordFiles" accept=".txt" multiple />
+                    <i class="fa-solid fa-file-import"></i>
+                    <div>
+                        <strong>匯入紀錄檔</strong>
+                        <p id="recordFileName">可選擇多個 TXT 紀錄檔</p>
+                    </div>
+                </label>
+            </div>
 
-                <div class="upload-content">
-                    <i class="fa-solid fa-file-arrow-up"></i>
-                    <h3>上傳 Excel 名單</h3>
-                    <p id="fileName">點擊選擇 Excel 檔案</p>
-                </div>
-            </label>
-
-            <div class="search-section">
+            <div class="draw-box">
                 <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="請輸入姓名 / 職別碼 / Email / 電話"
+                    type="number"
+                    id="drawCount"
+                    min="1"
+                    placeholder="輸入要抽出的名額，例如：3"
                 />
 
-                <button id="searchBtn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    驗證報名
+                <button id="drawBtn" type="button">
+                    <i class="fa-solid fa-shuffle"></i>
+                    隨機抽名單
                 </button>
             </div>
 
-            <div id="result" class="result"></div>
+            <div id="drawResult" class="result"></div>
+        </section>
 
-        </div>
-    </main>
+    </div>
+</main>
 
-    <footer class="footer">
-        <p>© 2026 歐耶~不能舒在壓力上 活動簽到系統</p>
-    </footer>
+<footer class="footer">
+    <p>© 2026 歐耶~不能舒在壓力上 活動簽到系統</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
